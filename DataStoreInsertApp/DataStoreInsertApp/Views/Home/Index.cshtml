@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Work with Azure SQL Database</h1>
+    
+</div>
+
+<h2>Person List</h2>
+
+<p>
+    <a asp-action="Create" asp-controller="Person" class="btn btn-primary">Create New</a>
+</p>
+
+<!-- Views/Home/Index.cshtml -->
+@model IEnumerable<DataStoreInsertApp.Models.Person>
+
+<h2>List of Persons</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Email</td>
+                <td>@person.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

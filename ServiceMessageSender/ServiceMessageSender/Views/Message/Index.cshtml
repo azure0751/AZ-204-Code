@@ -1,0 +1,41 @@
+﻿@model ServiceMessageSender.Models.MessageModel
+
+@{
+    ViewData["Title"] = "Send Messages to Azure Service Bus";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="MessageContent" class="control-label"></label>
+        <input asp-for="MessageContent" class="form-control" />
+        <span asp-validation-for="MessageContent" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConnectionString" class="control-label"></label>
+        <input asp-for="ConnectionString" class="form-control" value="@Model.ConnectionString" />
+        <span asp-validation-for="ConnectionString" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MessageCount" class="control-label"></label>
+        <select asp-for="MessageCount" class="form-control">
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+        <span asp-validation-for="MessageCount" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send Messages</button>
+</form>
+
+@if (ViewBag.StatusMessage != null)
+{
+    <div class="alert alert-success mt-3">
+        @ViewBag.StatusMessage
+    </div>
+}
