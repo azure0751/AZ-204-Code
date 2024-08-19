@@ -1,0 +1,29 @@
+﻿@model AzureStorageAccountDemo.Models.BlobListViewModel
+
+@{
+    ViewBag.Title = "List of Blobs";
+}
+
+<h2>Containers and Blobs</h2>
+
+@if (Model.Containers != null && Model.Containers.Count > 0)
+{
+    <ul>
+        @foreach (var container in Model.Containers)
+        {
+            <li>
+                <h3>@container</h3>
+                <ul>
+                    @foreach (var blob in Model.Blobs[container])
+                    {
+                        <li>@blob</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No containers found.</p>
+}
