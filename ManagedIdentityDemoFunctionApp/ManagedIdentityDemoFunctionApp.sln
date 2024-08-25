@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagedIdentityDemoFunctionApp", "ManagedIdentityDemoFunctionApp\ManagedIdentityDemoFunctionApp.csproj", "{6B262CE7-1303-421B-BA68-6E553B42FF74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "durablefunction", "durablefunction\durablefunction.csproj", "{A3F1035A-AFE9-4F3B-80AA-BB67E5C92568}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B262CE7-1303-421B-BA68-6E553B42FF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B262CE7-1303-421B-BA68-6E553B42FF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B262CE7-1303-421B-BA68-6E553B42FF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B262CE7-1303-421B-BA68-6E553B42FF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F1035A-AFE9-4F3B-80AA-BB67E5C92568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F1035A-AFE9-4F3B-80AA-BB67E5C92568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F1035A-AFE9-4F3B-80AA-BB67E5C92568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F1035A-AFE9-4F3B-80AA-BB67E5C92568}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B87D1965-E04C-4679-A0CD-1490462B9241}
+	EndGlobalSection
+EndGlobal

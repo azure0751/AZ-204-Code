@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "ManagedIdentityDemoFunctionApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7256"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 31984,
+      "useSSL": false
+    }
+  }
+}

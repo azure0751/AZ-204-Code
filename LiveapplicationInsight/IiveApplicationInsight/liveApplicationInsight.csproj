@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationInsightsResourceId>/subscriptions/ce1f6b2d-0e32-48e7-9ee2-7048b0ab340f/resourceGroups/abc/providers/microsoft.insights/components/ac20april</ApplicationInsightsResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.PerfCounterCollector" Version="2.20.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Web" Version="2.20.0" />
+  </ItemGroup>
+
+</Project>
