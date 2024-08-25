@@ -6,3 +6,7 @@
 /AzureStorageAccountDemo/.vs
 /AzureStorageAccountDemo/AzureStorageAccountDemo/bin
 /AzureStorageAccountDemo/AzureStorageAccountDemo/obj
+/AzureKeyVaultManagedIdentity/AzureKeyVaultManagedIdentity/bin
+/AzureKeyVaultManagedIdentity/AzureKeyVaultManagedIdentity/obj
+/RedisCacheBlobReaderDemo/RedisCacheBlobReaderDemo/bin
+/RedisCacheBlobReaderDemo/RedisCacheBlobReaderDemo/obj

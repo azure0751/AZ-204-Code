@@ -1,0 +1,15 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Blob Content</h1>
+    <div style="white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow: hidden; text-align: left;">
+        @ViewData["Content"]
+    </div>
+    <br/>
+    <form method="get">
+        <button type="submit" class="btn btn-primary">Refresh</button>
+    </form>
+</div>

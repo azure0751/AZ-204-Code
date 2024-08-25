@@ -1,0 +1,33 @@
+﻿@model AzureKeyVaultManagedIdentity.Models.ServicePrincipalRequestModel
+
+<h2>Retrieve a Secret from Azure Key Vault Using Service Principal</h2>
+
+<form asp-action="GetSecret" asp-controller="ServicePrincipal" method="post">
+    <table>
+        <tr>
+            <td><label for="TenantId">Tenant ID:</label></td>
+            <td><input type="text" id="TenantId" name="TenantId" required /></td>
+        </tr>
+        <tr>
+            <td><label for="ClientId">Client ID:</label></td>
+            <td><input type="text" id="ClientId" name="ClientId" required /></td>
+        </tr>
+        <tr>
+            <td><label for="ClientSecret">Client Secret:</label></td>
+            <td><input type="password" id="ClientSecret" name="ClientSecret" required /></td>
+        </tr>
+        <tr>
+            <td><label for="KeyVaultName">Key Vault Name:</label></td>
+            <td><input type="text" id="KeyVaultName" name="KeyVaultName" required /></td>
+        </tr>
+        <tr>
+            <td><label for="SecretName">Secret Name:</label></td>
+            <td><input type="text" id="SecretName" name="SecretName" required /></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:right;">
+                <button type="submit">Get Secret</button>
+            </td>
+        </tr>
+    </table>
+</form>

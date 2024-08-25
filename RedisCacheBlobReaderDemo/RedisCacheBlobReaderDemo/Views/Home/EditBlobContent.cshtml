@@ -1,0 +1,14 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Edit Blob Content";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit Blob Content</h1>
+    <form method="post" action="/Home/EditBlobContent">
+        <div class="form-group">
+            <textarea class="form-control" name="content" rows="10" placeholder="Enter new content here">@Model</textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+</div>

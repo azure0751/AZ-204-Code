@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Manage Identity and Service Principle Demo</h1>
+   
+    <table>
+        <tr>
+            <td>
+                Set Up Managed Identity
+            </td>
+
+            <td>
+                Set Up Service Principle
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td align="left">
+               Set Up Managed Identity and Grant Access to Azure Key Vault
+               <ol>
+                    <li>
+                        <strong>Set Up Managed Identity on Azure:</strong>
+                        <ol>
+                            <li>Go to your Azure web app in the Azure portal.</li>
+                            <li>In the left-hand menu, select <strong>Identity</strong> under the "Settings" section.</li>
+                            <li>Turn on the <strong>System-assigned managed identity</strong> and click <strong>Save</strong>.</li>
+                            <li><strong>Note:</strong> If you haven’t deployed your app to Azure yet, you can skip this step for now and come back to it after deploying.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Grant Access to Azure Key Vault:</strong>
+                        <ol>
+                            <li>In the Azure portal, navigate to your Key Vault.</li>
+                            <li>Under Settings, select <strong>Access policies</strong>.</li>
+                            <li>Click on <strong>+ Add Access Policy</strong>.</li>
+                            <li>In the "Configure from template" dropdown, select <strong>Key, Secret & Certificate Management</strong>.</li>
+                            <li>Under "Select principal," choose the Managed Identity of your Azure web app.</li>
+                            <li>Save the changes.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </td>
+            <td align="left">
+                Create Azure AD Service Principal and Assign Key Vault Access
+                <ol>
+                    <li>
+                        <strong>Create an Azure AD Service Principal:</strong>
+                        <ol>
+                            <li>In the Azure portal, navigate to <strong>Azure Active Directory > App registrations</strong>.</li>
+                            <li>Click <strong>New registration</strong>.</li>
+                            <li><strong>Name:</strong> Give your app a name.</li>
+                            <li><strong>Supported account types:</strong> Choose the appropriate option (usually "Accounts in this organizational directory only").</li>
+                            <li><strong>Redirect URI:</strong> This is not needed for a console or background service, so you can leave it empty.</li>
+                            <li>Click <strong>Register</strong>.</li>
+                            <li>After the app is registered, navigate to <strong>Certificates & secrets</strong> and create a <strong>New client secret</strong>. Copy and save the secret value as it won't be shown again.</li>
+                            <li>Go to <strong>Overview</strong> and copy the <strong>Application (client) ID</strong> and <strong>Directory (tenant) ID</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Assign Key Vault Access to the Service Principal:</strong>
+                        <ol>
+                            <li>Go to your Key Vault in the Azure portal.</li>
+                            <li>Under <strong>Access policies</strong>, click on <strong>+ Add Access Policy</strong>.</li>
+                            <li>Select <strong>Key, Secret, & Certificate Management</strong> under the "Configure from template" dropdown.</li>
+                            <li>Click <strong>Select principal</strong> and search for the service principal you just created.</li>
+                            <li>Add the access policy and save the changes.</li>
+                        </ol>
+                    </li>
+                </ol>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
