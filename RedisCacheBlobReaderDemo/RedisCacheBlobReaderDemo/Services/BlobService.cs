@@ -14,9 +14,9 @@ namespace RedisCacheBlobReaderDemo.Services
 
         public BlobService(IConfiguration configuration)
         {
-            _blobServiceClient = new BlobServiceClient(configuration["AzureBlobStorage:ConnectionString"]);
-            _containerName = configuration["AzureBlobStorage:ContainerName"];
-            _blobName = configuration["AzureBlobStorage:BlobName"];
+            _blobServiceClient = new BlobServiceClient(configuration["AzureStorage:ConnectionString"]);
+            _containerName = configuration["AzureStorage:ContainerName"];
+            _blobName = configuration["AzureStorage:BlobName"];
         }
 
         public BlobService(string connectionString, string containerName, string blobName)

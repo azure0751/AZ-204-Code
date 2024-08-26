@@ -16,24 +16,24 @@ namespace RedisCacheBlobReaderDemo.Controllers
             // Check for necessary configuration settings
             var missingConfigs = new List<string>();
 
-            var blobConnectionString = _configuration["AzureBlobStorage:ConnectionString"];
-            var containername = _configuration["AzureBlobStorage:ContainerName"];
-            var blobname = _configuration["AzureBlobStorage:BlobName"];
+            var blobConnectionString = _configuration["AzureStorage:ConnectionString"];
+            var containername = _configuration["AzureStorage:ContainerName"];
+            var blobname = _configuration["AzureStorage:BlobName"];
             var redisConnectionString = _configuration["RedisCache:ConnectionString"];
 
             if (string.IsNullOrEmpty(blobConnectionString))
             {
-                missingConfigs.Add("Azure Blob Storage connection string [\"AzureBlobStorage:ConnectionString\"] is missing.");
+                missingConfigs.Add("Azure Blob Storage connection string [\"AzureStorage:ConnectionString\"] is missing.");
             }
 
             if (string.IsNullOrEmpty(blobConnectionString))
             {
-                missingConfigs.Add("Azure Blob container name [\"AzureBlobStorage:ContainerName\"] configuration is missing.");
+                missingConfigs.Add("Azure Blob container name [\"AzureStorage:ContainerName\"] configuration is missing.");
             }
 
             if (string.IsNullOrEmpty(blobConnectionString))
             {
-                missingConfigs.Add("Azure Blob name [\"AzureBlobStorage:BlobName\"] configuration is missing.");
+                missingConfigs.Add("Azure Blob name [\"AzureStorage:BlobName\"] configuration is missing.");
             }
 
             if (string.IsNullOrEmpty(redisConnectionString))

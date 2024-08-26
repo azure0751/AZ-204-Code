@@ -17,9 +17,9 @@ namespace RedisCacheBlobReaderDemo
 
             //// Configure Azure Blob Storage directly from configuration
             //builder.Services.AddSingleton(new BlobService(
-            //    builder.Configuration["AzureBlobStorage:ConnectionString"],
-            //    builder.Configuration["AzureBlobStorage:ContainerName"],
-            //    builder.Configuration["AzureBlobStorage:BlobName"]
+            //    builder.Configuration["AzureStorage:ConnectionString"],
+            //    builder.Configuration["AzureStorage:ContainerName"],
+            //    builder.Configuration["AzureStorage:BlobName"]
             //));
             builder.Services.AddSingleton(new BlobService());
             //// Configure Redis Cache
