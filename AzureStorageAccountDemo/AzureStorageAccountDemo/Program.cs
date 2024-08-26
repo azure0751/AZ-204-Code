@@ -8,8 +8,17 @@ namespace AzureStorageAccountDemo
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            IConfigurationRoot config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables()
+  
+    .Build();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //builder.Configuration.AddEnvironmentVariables();
+            //builder.Configuration.AddJsonFile("appsettings.json");
 
             // Register BlobService for dependency injection
             builder.Services.AddSingleton<BlobService>();

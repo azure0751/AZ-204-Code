@@ -11,7 +11,9 @@ namespace AzureStorageAccountDemo.Services
 
         public BlobService(IConfiguration configuration)
         {
-            _connectionString = configuration.GetSection("AzureStorage:ConnectionString").Value;
+            // _connectionString = configuration.GetSection("AzureStorage:ConnectionString").Value;
+            _connectionString = configuration["AzureStorage:ConnectionString"];
+            string debugdoing = "";
         }
 
         public async Task<string> UploadFileAsync(FileUploadModel model)

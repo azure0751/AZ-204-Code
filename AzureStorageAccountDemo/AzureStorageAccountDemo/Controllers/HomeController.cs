@@ -7,14 +7,27 @@ namespace AzureStorageAccountDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
+            string connectionString = _configuration["AzureStorage:ConnectionString"];
+            bool isConfigMissing = string.IsNullOrEmpty(connectionString);
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                ViewBag.WarningMessage = "Warning: The AzureStorage:ConnectionString  is missing! kindly set it in environment variable or app settings.json ";
+                ViewBag.IsConfigMissing = isConfigMissing;
+
+            }
+
+           
             return View();
         }
 
