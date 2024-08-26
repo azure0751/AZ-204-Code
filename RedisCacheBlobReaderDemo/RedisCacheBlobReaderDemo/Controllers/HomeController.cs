@@ -1,17 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using RedisCacheBlobReaderDemo.Services;
-using RedisCacheBlobReaderDemo.Services;
-using System.Threading.Tasks;
 
 public class HomeController : Controller
 {
     private readonly BlobService _blobService;
     private readonly RedisCacheService _redisCacheService;
+    private readonly IConfiguration _configuration;
 
-    public HomeController(BlobService blobService, RedisCacheService redisCacheService)
+    //public HomeController(BlobService blobService, RedisCacheService redisCacheService,IConfiguration configuration)
+    //{
+    //    _blobService = blobService;
+    //    _redisCacheService = redisCacheService;
+    //    _configuration = configuration;
+    //}
+
+    public HomeController(IConfiguration configuration)
     {
-        _blobService = blobService;
-        _redisCacheService = redisCacheService;
+        _blobService = new BlobService(configuration);
+        _redisCacheService = new RedisCacheService(configuration);
+        _configuration = configuration;
     }
 
     public async Task<IActionResult> Index()
@@ -27,7 +34,6 @@ public class HomeController : Controller
 
             // Store content in Redis Cache with a 90-second expiration
             await _redisCacheService.SetCacheAsync(cacheKey, content, TimeSpan.FromSeconds(90));
-
 
             // Set content to be displayed
             ViewData["Content"] = content;
@@ -63,4 +69,6 @@ public class HomeController : Controller
         // Redirect back to the Index page
         return RedirectToAction("Index");
     }
+
+    // New action method for DemoConfig view
 }

@@ -39,3 +39,4 @@
 /Queue-Reader-publisher/StorageQueueMessageSender/obj
 /CosmosDB-EmployeeManagement/EmployeeManagement/Properties
 /event-hub-sender-master/EventHubSender/EventhubSenderConsole/bin
+/RedisCacheBlobReaderDemo/.vs

@@ -15,18 +15,17 @@ namespace RedisCacheBlobReaderDemo
             builder.Configuration.AddEnvironmentVariables();
             builder.Configuration.AddJsonFile("appsettings.json");
 
-
-            // Configure Azure Blob Storage directly from configuration
-            builder.Services.AddSingleton(new BlobService(
-                builder.Configuration["AzureBlobStorage:ConnectionString"],
-                builder.Configuration["AzureBlobStorage:ContainerName"],
-                builder.Configuration["AzureBlobStorage:BlobName"]
-            ));
-
-            // Configure Redis Cache
-            var redisCacheConfig = builder.Configuration.GetSection("RedisCache");
-            builder.Services.AddSingleton(new RedisCacheService(redisCacheConfig["ConnectionString"]));
-
+            //// Configure Azure Blob Storage directly from configuration
+            //builder.Services.AddSingleton(new BlobService(
+            //    builder.Configuration["AzureBlobStorage:ConnectionString"],
+            //    builder.Configuration["AzureBlobStorage:ContainerName"],
+            //    builder.Configuration["AzureBlobStorage:BlobName"]
+            //));
+            builder.Services.AddSingleton(new BlobService());
+            //// Configure Redis Cache
+            //var redisCacheConfig = builder.Configuration["RedisCache:ConnectionString"];
+            //builder.Services.AddSingleton(new RedisCacheService(redisCacheConfig));
+            builder.Services.AddSingleton(new RedisCacheService());
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -43,7 +42,7 @@ namespace RedisCacheBlobReaderDemo
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=DemoConfig}/{action=Index}/{id?}");
 
             app.Run();
         }

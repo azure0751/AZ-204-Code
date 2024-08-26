@@ -8,6 +8,17 @@ namespace RedisCacheBlobReaderDemo.Services
         private readonly string _containerName;
         private readonly string _blobName;
 
+        public BlobService()
+        {
+        }
+
+        public BlobService(IConfiguration configuration)
+        {
+            _blobServiceClient = new BlobServiceClient(configuration["AzureBlobStorage:ConnectionString"]);
+            _containerName = configuration["AzureBlobStorage:ContainerName"];
+            _blobName = configuration["AzureBlobStorage:BlobName"];
+        }
+
         public BlobService(string connectionString, string containerName, string blobName)
         {
             _blobServiceClient = new BlobServiceClient(connectionString);
@@ -32,7 +43,7 @@ namespace RedisCacheBlobReaderDemo.Services
 
         public async Task UpdateBlobContentAsync(string content)
         {
-           // var blobServiceClient = new BlobServiceClient(_connectionString);
+            // var blobServiceClient = new BlobServiceClient(_connectionString);
             var containerClient = _blobServiceClient.GetBlobContainerClient(_containerName);
             var blobClient = containerClient.GetBlobClient(_blobName);
 
