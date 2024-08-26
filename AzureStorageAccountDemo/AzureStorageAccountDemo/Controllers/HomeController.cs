@@ -22,7 +22,7 @@ namespace AzureStorageAccountDemo.Controllers
             bool isConfigMissing = string.IsNullOrEmpty(connectionString);
             if (string.IsNullOrEmpty(connectionString))
             {
-                ViewBag.WarningMessage = "Warning: The AzureStorage:ConnectionString  is missing! kindly set it in environment variable or app settings.json ";
+                ViewBag.WarningMessage = "Warning: The AzureStorage__ConnectionString  is missing! kindly set it in environment variable or app settings.json ";
                 ViewBag.IsConfigMissing = isConfigMissing;
 
             }

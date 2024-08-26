@@ -8,12 +8,18 @@ namespace AzureStorageAccountDemo
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             IConfigurationRoot config = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
-    .AddEnvironmentVariables()
-  
-    .Build();
+             .SetBasePath(Directory.GetCurrentDirectory())
+             .AddJsonFile("appsettings.json")
+             .AddEnvironmentVariables() // This will automatically translate "__" to ":"
+             .Build();
+
+
+
+    //        builder.Configuration
+    //.SetBasePath(Directory.GetCurrentDirectory())
+    //.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    //.AddEnvironmentVariables(); // This will automatically translate "__" to ":"
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
