@@ -55,6 +55,13 @@ az appservice plan create --name $appServicePlanName2 --resource-group $resource
 az webapp create --name $appServiceName1 --resource-group $resourceGroup --plan $appServicePlanName1 
 az webapp create --name $appServiceName2 --resource-group $resourceGroup --plan $appServicePlanName2
 ```
+### Deploy Location viewer App directly from GitHub Repository
+```plaintext
+az webapp deployment source config --name $appServiceName1 --resource-group $resourceGroup --repo-url https://github.com/azure0751/locationViewer.git --branch main --manual-integration
+```
+```plaintext
+az webapp deployment source config --name $appServiceName2 --resource-group $resourceGroup --repo-url https://github.com/azure0751/locationViewer.git --branch main --manual-integration
+```
 
 
 ## 4. Create Traffic Manager Profile with Performance routing
