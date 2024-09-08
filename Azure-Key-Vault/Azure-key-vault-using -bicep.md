@@ -52,9 +52,8 @@ resource secret 'Microsoft.KeyVault/vaults/secrets@2022-11-01' = {
   }
 }
 
-output keyVaultUri string = keyVault.properti
+output keyVaultUri string = keyVault.properties.vaultUri
 ```
-es.vaultUri
 Explanation:
 Parameters:
 
