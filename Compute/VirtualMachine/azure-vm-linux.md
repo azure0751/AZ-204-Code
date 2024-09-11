@@ -10,7 +10,7 @@ vmName="MyUbuntuVM"
 image="UbuntuLTS"
 adminUser="azureuser"
 vmSize="Standard_D2s_v3"
-osDiskSku="Standard_HDD"  # Specify Standard HDD for the OS disk
+osDiskSku="Standard_LRS"  # Specify Standard HDD for the OS disk
 ```
 
 

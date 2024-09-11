@@ -10,7 +10,7 @@ image="Win2019Datacenter"
 adminUser="azureuser"
 adminPassword="YourPassword123!"  # Set a strong password
 vmSize="Standard_D2s_v3"
-osDiskSku="Standard_HDD"  # Specify Standard HDD for the OS disk
+osDiskSku="Standard_LRS"  # Specify Standard HDD for the OS disk
 ```
 
 
