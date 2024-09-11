@@ -30,7 +30,7 @@ az vm create \
   --admin-username $adminUser \
   --generate-ssh-keys \
   --location $location \
-  --os-disk-sku $osDiskSku
+  --storage-sku $osDiskSku
 ```
 
 

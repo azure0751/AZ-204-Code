@@ -30,7 +30,7 @@ az vm create \
   --admin-username $adminUser \
   --admin-password $adminPassword \
   --location $location \
-  --os-disk-sku $osDiskSku
+  --storage-sku $osDiskSku
 ```
 
 
