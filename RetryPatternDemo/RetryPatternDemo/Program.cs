@@ -20,7 +20,7 @@ namespace RetryPatternDemo
                         Console.WriteLine($"Retry {retryCount} implemented with Polly. Waiting {timeSpan} before next retry.");
                     });
 
-            const int numberOfOperations = 20; // Number of operations to demonstrate
+            const int numberOfOperations = 100; // Number of operations to demonstrate
 
             for (int i = 1; i <= numberOfOperations; i++)
             {
